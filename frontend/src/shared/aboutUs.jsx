@@ -1,201 +1,211 @@
 // src/components/AboutUs.jsx
 import React from "react";
 import CustomNavbar from "../shared/Navbar";
+import { Container, Row, Col, Card } from "react-bootstrap";
+import { FaUsers, FaHandsHelping, FaLightbulb, FaRocket } from "react-icons/fa";
 
 const AboutUs = () => {
-  // Using a sample image for the founder
-  const founderImage =
-    "https://via.placeholder.com/150"; // Replace with an actual image link if available
+  const founderImage = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQkQUdXGCOfdBmv7bCMtVo7YME6lPIcaVGFg&s"; // Replace with your founder image
 
   return (
     <>
       <CustomNavbar />
+
+      {/* Hero Section */}
       <div
-        className="d-flex justify-content-center align-items-center"
+        className="d-flex flex-column justify-content-center align-items-center text-center text-white"
         style={{
-          minHeight: "calc(100vh - 150px)",
-          paddingTop: "80px",
-          paddingBottom: "50px",
-          padding: "15px",
-          background: "linear-gradient(120deg, #fdfbfb, #ebedee)",
-          textAlign: "center",
+          minHeight: "60vh",
+          background:
+            "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1529107386315-e1a2ed48a620') center/cover no-repeat",
+          padding: "40px 20px",
         }}
       >
-        <div
-          className="card p-4 shadow-lg animate__animated animate__fadeInUp"
-          style={{
-            maxWidth: "800px",
-            width: "100%",
-            borderRadius: "15px",
-            boxShadow: "0 4px 15px rgba(0, 0, 0, 0.1)",
-            backgroundColor: "#fff",
-          }}
+        <h1
+          className="animate__animated animate__fadeInDown"
+          style={{ fontWeight: "bold", fontSize: "3rem" }}
         >
-          <h2
-            className="mb-4"
-            style={{
-              color: "#6A38C2",
-              fontWeight: "bold",
-              fontFamily: "'Poppins', sans-serif",
-            }}
-          >
-            About Us
-          </h2>
-          <p
-            style={{
-              color: "#343a40",
-              lineHeight: "1.6",
-              fontFamily: "'Roboto', sans-serif",
-            }}
-          >
-            Welcome to <strong>SkillBarter</strong>! We believe in the power of
-            shared knowledge and the value of skills. Our platform connects
-            individuals with unique skills and talents, enabling them to barter
-            and exchange their expertise in a collaborative environment. Whether
-            you're a professional looking to expand your network, or someone
-            eager to learn a new skill, SkillBarter is here to help you make
-            meaningful connections.
-          </p>
+          About <span style={{ color: "#F83002" }}>SkillBarter</span>
+        </h1>
+        <p
+          className="mt-3 animate__animated animate__fadeInUp"
+          style={{ maxWidth: "700px", fontSize: "1.2rem" }}
+        >
+          Redefining the way people connect, learn, and grow — one skill at a
+          time.
+        </p>
+      </div>
 
-          <h4
-            className="mt-4"
-            style={{
-              color: "#F83002",
-              fontWeight: "bold",
-              fontFamily: "'Poppins', sans-serif",
-              fontSize: "1.5rem",
-            }}
-          >
-            Meet Our Founder
-          </h4>
-          <div className="d-flex flex-column align-items-center mt-4">
-            <img
-              src={founderImage}
-              alt="Founder"
+      {/* About Section */}
+      <Container className="my-5">
+        <Row className="justify-content-center">
+          <Col md={10}>
+            <Card className="p-4 shadow-lg border-0 rounded-4 animate__animated animate__fadeInUp">
+              <Card.Body>
+                <h2
+                  style={{
+                    color: "#6A38C2",
+                    fontWeight: "bold",
+                    fontFamily: "'Poppins', sans-serif",
+                  }}
+                >
+                  Who We Are
+                </h2>
+                <p className="mt-3" style={{ lineHeight: "1.7" }}>
+                  At <strong>SkillBarter</strong>, we believe knowledge is most
+                  powerful when it’s shared. Our platform enables people to
+                  barter their skills instead of traditional transactions,
+                  fostering collaboration, trust, and mutual growth. We’re a
+                  community-driven hub where professionals, learners, and
+                  creators unite to exchange knowledge, build networks, and
+                  empower each other.
+                </p>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
+
+      {/* Founder Section */}
+      <Container className="my-5">
+        <h2
+          className="text-center mb-4"
+          style={{ color: "#F83002", fontWeight: "bold" }}
+        >
+          Meet Our Founder
+        </h2>
+        <Row className="justify-content-center text-center">
+          <Col md={4}>
+            <Card
+              className="p-3 border-0 shadow-lg rounded-4 founder-card"
               style={{
-                width: "200px",
-                height: "200px",
-                borderRadius: "10px",
-                marginBottom: "20px",
-                border: "5px solid #6A38C2", // Frame color
-                boxShadow: "0 4px 15px rgba(0, 0, 0, 0.1)",
-                transition: "transform 0.3s ease",
+                transition: "transform 0.3s ease, box-shadow 0.3s ease",
               }}
-              onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
-              onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
-            />
-            <div style={{ textAlign: "center" }}>
-              <p
+              onMouseOver={(e) =>
+                (e.currentTarget.style.transform = "translateY(-10px)")
+              }
+              onMouseOut={(e) =>
+                (e.currentTarget.style.transform = "translateY(0)")
+              }
+            >
+              <Card.Img
+                variant="top"
+                src={founderImage}
                 style={{
-                  color: "#343a40",
-                  fontWeight: "bold",
-                  fontSize: "1.5rem",
-                  fontFamily: "'Poppins', sans-serif",
+                  width: "200px",
+                  height: "200px",
+                  borderRadius: "50%",
+                  objectFit: "cover",
+                  margin: "0 auto",
+                  border: "5px solid #6A38C2",
                 }}
-              >
-                Keshav Rawal
+              />
+              <Card.Body>
+                <h4 style={{ color: "#6A38C2", fontWeight: "bold" }}>TechVerse</h4>
+                <p>
+                  TechVerse is the visionary behind SkillBarter. With a passion for
+                  learning and a deep belief in the power of community, he
+                  founded SkillBarter to empower individuals through free skill
+                  exchange and collaboration.
+                </p>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
+
+      {/* Mission & Vision */}
+      <Container className="my-5">
+        <Row className="text-center">
+          <Col md={6} className="mb-4">
+            <Card className="p-4 shadow border-0 rounded-4 h-100">
+              <FaRocket size={40} color="#F83002" />
+              <h4 className="mt-3" style={{ color: "#F83002" }}>
+                Our Mission
+              </h4>
+              <p>
+                To create a global community where knowledge flows freely,
+                bridging the gap between skill seekers and providers for mutual
+                success.
               </p>
-              <p
-                style={{
-                  color: "#343a40",
-                  lineHeight: "1.6",
-                  fontFamily: "'Roboto', sans-serif",
-                }}
-              >
-                Keshav is the visionary behind SkillBarter. With a passion for
-                learning and a deep belief in the power of community, Keshav
-                founded SkillBarter to create a platform where skills could be
-                exchanged freely, empowering individuals to achieve their
-                personal and professional goals.
+            </Card>
+          </Col>
+          <Col md={6} className="mb-4">
+            <Card className="p-4 shadow border-0 rounded-4 h-100">
+              <FaLightbulb size={40} color="#6A38C2" />
+              <h4 className="mt-3" style={{ color: "#6A38C2" }}>
+                Our Vision
+              </h4>
+              <p>
+                To redefine learning by making skill-sharing the foundation of
+                growth, innovation, and opportunity worldwide.
               </p>
-            </div>
-          </div>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
 
-          <h4
-            className="mt-4"
-            style={{
-              color: "#F83002",
-              fontWeight: "bold",
-              fontFamily: "'Poppins', sans-serif",
-              fontSize: "1.5rem",
-            }}
-          >
-            Our Mission
-          </h4>
-          <p
-            style={{
-              color: "#343a40",
-              lineHeight: "1.6",
-              fontFamily: "'Roboto', sans-serif",
-            }}
-          >
-            Our mission is to create a community where skills and knowledge are
-            exchanged freely, fostering growth, innovation, and mutual support.
-            We aim to bridge the gap between skill seekers and providers, making
-            it easier for everyone to access the resources they need to succeed.
-          </p>
+      {/* Core Values */}
+      <Container className="my-5">
+        <h2
+          className="text-center mb-4"
+          style={{ color: "#6A38C2", fontWeight: "bold" }}
+        >
+          Our Core Values
+        </h2>
+        <Row>
+          <Col md={4} className="mb-4">
+            <Card className="p-4 shadow border-0 rounded-4 text-center h-100">
+              <FaUsers size={40} color="#F83002" />
+              <h5 className="mt-3">Collaboration</h5>
+              <p>
+                Bringing people together to share, learn, and grow as a
+                community.
+              </p>
+            </Card>
+          </Col>
+          <Col md={4} className="mb-4">
+            <Card className="p-4 shadow border-0 rounded-4 text-center h-100">
+              <FaHandsHelping size={40} color="#6A38C2" />
+              <h5 className="mt-3">Empowerment</h5>
+              <p>
+                Enabling individuals to achieve personal and professional goals
+                through skill exchange.
+              </p>
+            </Card>
+          </Col>
+          <Col md={4} className="mb-4">
+            <Card className="p-4 shadow border-0 rounded-4 text-center h-100">
+              <FaLightbulb size={40} color="#F8B400" />
+              <h5 className="mt-3">Innovation</h5>
+              <p>
+                Encouraging creative problem-solving and real-world learning
+                experiences.
+              </p>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
 
-          <h4
-            className="mt-4"
-            style={{
-              color: "#F83002",
-              fontWeight: "bold",
-              fontFamily: "'Poppins', sans-serif",
-              fontSize: "1.5rem",
-            }}
-          >
-            Why SkillBarter?
-          </h4>
-          <ul
-            className="text-left"
-            style={{
-              color: "#343a40",
-              lineHeight: "1.6",
-              paddingLeft: "20px",
-              fontFamily: "'Roboto', sans-serif",
-            }}
-          >
-            <li>
-              <strong>Collaborative Learning:</strong> We provide a space where
-              you can share your knowledge, learn from others, and grow your
-              skillset.
-            </li>
-            <li>
-              <strong>Diverse Community:</strong> Our platform is home to a
-              diverse community of professionals from various industries and
-              backgrounds.
-            </li>
-            <li>
-              <strong>Flexible Exchange:</strong> With SkillBarter, you can
-              barter your skills, offering what you know in exchange for
-              learning something new.
-            </li>
-          </ul>
-
-          <h4
-            className="mt-4"
-            style={{
-              color: "#F83002",
-              fontWeight: "bold",
-              fontFamily: "'Poppins', sans-serif",
-              fontSize: "1.5rem",
-            }}
-          >
-            Join Us Today
-          </h4>
-          <p
-            style={{
-              color: "#343a40",
-              lineHeight: "1.6",
-              fontFamily: "'Roboto', sans-serif",
-            }}
-          >
-            Be a part of our growing community and start bartering your skills
-            today. Whether you’re looking to teach, learn, or simply connect
-            with like-minded individuals, SkillBarter has something for
-            everyone.
-          </p>
-        </div>
+      {/* Call To Action */}
+      <div
+        className="text-center text-white py-5"
+        style={{
+          background: "linear-gradient(120deg, #6A38C2, #F83002)",
+        }}
+      >
+        <h2 style={{ fontWeight: "bold" }}>Join Us Today</h2>
+        <p className="mt-3" style={{ maxWidth: "700px", margin: "0 auto" }}>
+          Be part of our growing community and start bartering your skills
+          today. Whether you’re here to teach, learn, or connect, SkillBarter is
+          the place for you.
+        </p>
+        <button
+          className="btn btn-light mt-3 px-4 py-2"
+          style={{ borderRadius: "30px", fontWeight: "bold" }}
+        >
+          Get Started
+        </button>
       </div>
     </>
   );
